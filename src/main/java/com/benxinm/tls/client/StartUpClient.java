@@ -15,9 +15,9 @@ public class StartUpClient {
         Bootstrap bootstrap = new Bootstrap();
         NioEventLoopGroup eventExecutors = new NioEventLoopGroup(3);
         try {
-            File cert = new File("src/main/resources/ca.cer");
-            File keyFile = new File("src/main/resources/client8.key");
-            File rootFile = new File("src/main/resources/ca.cer");
+            File cert = new File("src/main/resources/ecc/client.crt");
+            File keyFile = new File("src/main/resources/ecc/client8.key");
+            File rootFile = new File("src/main/resources/ecc/ca.crt");
             SslContext sslContext = SslContextBuilder.forClient()
                     .keyManager(cert,keyFile)
                     .trustManager(rootFile)

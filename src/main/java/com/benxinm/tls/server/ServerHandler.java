@@ -25,7 +25,6 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
                     }
                 }
         );
-
         SocketChannel channel = (SocketChannel) ctx.channel();
         System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())+" conn:");
         System.out.println("IP:" + channel.localAddress().getHostString());

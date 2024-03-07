@@ -14,9 +14,10 @@ public class StartUpServer {
     public static void main(String[] args) {
         try {
             //cipher suite: TLS_AES_128_GCM_SHA256
+            //curve: prime256v1
             //private key + x509 cer
-            File privateKey = new File("src/main/resources/server8.key");
-            File cer = new File("src/main/resources/server.cer");
+            File privateKey = new File("src/main/resources/ecc/server8.key");
+            File cer = new File("src/main/resources/ecc/server.crt");
             SslContext sslContext = SslContextBuilder.forServer(cer, privateKey)
                     .sslProvider(SslProvider.OPENSSL)
                     .protocols("TLSv1.3")
